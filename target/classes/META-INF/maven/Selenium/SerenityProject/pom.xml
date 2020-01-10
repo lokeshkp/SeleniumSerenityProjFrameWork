@@ -95,6 +95,12 @@
 			<type>pom</type>
 		</dependency>
 
+		<dependency>
+			<groupId>com.github.javafaker</groupId>
+			<artifactId>javafaker</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -113,9 +119,11 @@
 				<version>3.0.0-M4</version>
 				<configuration>
 					<includes>
-						<include>**/SerenityProject/**/*.java</include>
-						<include>**/SerenityProject/*.java</include>
+						<include>**/qa/**/*.java</include>
+						<include>**/qa/*.java</include>
 					</includes>
+					<forkCount>4</forkCount>
+					<reuseForks>true</reuseForks>
 					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
 				</configuration>
 				<executions>

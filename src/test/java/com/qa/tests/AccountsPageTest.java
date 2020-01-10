@@ -51,7 +51,7 @@ public class AccountsPageTest {
 		
 		petStore.navigateToLoginPage();
 		petStore.doLogin(userName, password);
-		String gretMSg = petStore.getGreetingMessage();
-		assertEquals("Welcome "+fName+"!", gretMSg);
+		String gretMsg = petStore.getGreetingMessage();
+		assertEquals("Welcome "+fName+"!", gretMsg);
 	}
 }

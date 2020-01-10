@@ -29,7 +29,7 @@ public class LoginPageTest {
 		petStore.navigateToLoginPage();
 		petStore.doLogin("test", "test");
 		String gretMsg = petStore.getGreetingMessage();
-		assertEquals("Welcome tets!", gretMsg);
+		assertEquals("Welcome test!", gretMsg);
 	}
 	
 	@Title("Verify If user can Logout successfully from the store with valid credentials")
@@ -40,7 +40,7 @@ public class LoginPageTest {
 		petStore.signOut();
 	}
 
-	@Title("Verify if mesaage <b><i> invlid username or password. Signon failed </b></i> is displayed for")
+	@Title("Verify if mesaage <b><i> invlid Username or password. Signon failed </b></i> is displayed for")
 	@Test
 	public void verifyIfMessageIsDisplayedForInvalidUser(){
 		petStore.navigateToLoginPage();

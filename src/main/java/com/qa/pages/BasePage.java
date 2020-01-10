@@ -9,7 +9,7 @@ public class BasePage extends PageObject{
 
 	private static final String JPET_STORE_LINK 	= "//a[text()='Enter the Store']";
 	private static final String SIGN_IN_LINK 		= "//a[text()='Sign In']";
-	private static final String LOGO_LINK 			= "#LogoContent";
+	private static final String LOGO_LINK 			= "//div[@id='LogoContent']";
 	private static final String SIGN_OUT_LINK 		= "//div[@id='MenuContent']/a[contains(text(),'Sign Out')]";
 	private static final String MY_ACC_LINK 		= "//a[contains(text(),'Register Now!')]";
 	private static final String HELP_LINK 			=  "//*[id='MenuContent']/a[contains(text(),'?')]";

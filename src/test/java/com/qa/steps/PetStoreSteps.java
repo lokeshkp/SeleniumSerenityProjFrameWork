@@ -17,6 +17,7 @@ public class PetStoreSteps extends ScenarioSteps{
 	LoginPage login;
 	AccountPage account;
 	DashBoardPage dashBoard;
+	ProductsPage prodcuts;
 	
 	/****************************************************************************************************
 	 * 
@@ -137,5 +138,28 @@ public class PetStoreSteps extends ScenarioSteps{
 	@Step("Getting the greeting message")
 	public String getGreetingMessage(){
 		return dashBoard.getGreetingMessage();
+	}
+	
+	@Step("Selecting {0} petcategory from center display")
+	public ProductsPage selectProductFromCenterDisplay(PetCategories petCategories){
+		return dashBoard.selectProductsFromCenterImage(petCategories);
+	}
+	
+	@Step("Selecting {0} petcategory from side bar display")
+	public ProductsPage selectProductFromSideBarDisplay(PetCategories petCategories){
+		return dashBoard.selectProductsFromSideBar(petCategories);
+	}
+	
+	/****************************************************************************************************
+	 * 
+	 * 
+	 * 							PRODUCTS PAGE STEPS
+	 * 
+	 * 
+	 ****************************************************************************************************/
+	
+	@Step("Selecting a Pet with pet category {0} and pet name {1}")
+	public ProductsPage selectPetByName(PetCategories petCategory, String petName){
+		return prodcuts.selectPetByName(petCategory, petName);
 	}
 }
