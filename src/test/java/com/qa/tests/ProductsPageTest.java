@@ -23,12 +23,15 @@ public class ProductsPageTest {
 	@Steps
 	PetStoreSteps petStore;
 	
-	@Title("Select pet by pet category and name")
+	@Title("Select pet by category and name")
 	@Test
-	public void selectProductByName(){
+	public void selectProductByName() throws InterruptedException{
 		petStore.navigateToLoginPage();
 		petStore.navigateToDashBoard();
 		petStore.selectProductFromSideBarDisplay(PetCategories.DOGS);
-		petStore.selectPetByName(PetCategories.DOGS, "Chihuahua");
+		petStore.selectPetByName(PetCategories.DOGS, "Bulldog");
+		//petStore.addCartSpecificProduct("Female Puppy Bulldog");
+		petStore.addToCartByViewingItemDetails("Female Puppy Bulldog", "Friendly dog from England");
+		Thread.sleep(3000);
 	}
 }

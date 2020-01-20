@@ -29,7 +29,7 @@ public class LoginPageTest {
 		petStore.navigateToLoginPage();
 		petStore.doLogin("test", "test");
 		String gretMsg = petStore.getGreetingMessage();
-		assertEquals("Welcome test!", gretMsg);
+		assertEquals("Welcome Lokesh_Test!", gretMsg);
 	}
 	
 	@Title("Verify If user can Logout successfully from the store with valid credentials")

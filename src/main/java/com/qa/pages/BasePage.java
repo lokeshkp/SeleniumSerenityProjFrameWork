@@ -18,11 +18,11 @@ public class BasePage extends PageObject{
 	private static final String SEARCH_BUTTON 		= "//input[@name='Search']"; 
 	
 	//Product Quick Links
-	private static final String FISH_LINK 			= "//div[id='QuickLinks'] a[href$='FISH']";
-	private static final String DOGS_LINK 			= "//div[id='QuickLinks'] a[href$='DOGS']"; 
-	private static final String REPTILES_LINK 		= "//div[id='QuickLinks'] a[href$='REPTILES']";
-	private static final String CATS_LINK 			= "//div[id='QuickLinks'] a[href$='CATS']"; 
-	private static final String BIRDS_LINK 			= "//div[id='QuickLinks'] a[href$='BIRDS']"; 
+	private static final String FISH_LINK 			= "//div[@id='QuickLinks']/a[contains(@href,'FISH')]";
+	private static final String DOGS_LINK 			= "//div[@id='QuickLinks']/a[contains(@href,'DOGS')]"; 
+	private static final String REPTILES_LINK 		= "//div[@id='QuickLinks']/a[contains(@href,'REPTILES')]";
+	private static final String CATS_LINK 			= "//div[@id='QuickLinks']/a[contains(@href,'CATS')]"; 
+	private static final String BIRDS_LINK 			= "//div[@id='QuickLinks']/a[contains(@href,'BIRDS')]"; 
 	private static final String BANNER_IMG 			= "//*[@id='Banner']/img";
 
 	

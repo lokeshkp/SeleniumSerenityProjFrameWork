@@ -7,6 +7,7 @@ import com.qa.pages.HelpPage;
 import com.qa.pages.LoginPage;
 import com.qa.pages.ProductsPage;
 import com.qa.utils.PetCategories;
+import com.qa.pages.OrdersPage;
 
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.steps.ScenarioSteps;
@@ -18,6 +19,7 @@ public class PetStoreSteps extends ScenarioSteps{
 	AccountPage account;
 	DashBoardPage dashBoard;
 	ProductsPage prodcuts;
+	OrdersPage ordersPage;
 	
 	/****************************************************************************************************
 	 * 
@@ -67,6 +69,8 @@ public class PetStoreSteps extends ScenarioSteps{
 	public ProductsPage searchForProduct(String productName){
 		return basePage.searchForProducts(productName);
 	}
+	
+	
 	
 	
 	/****************************************************************************************************
@@ -162,4 +166,75 @@ public class PetStoreSteps extends ScenarioSteps{
 	public ProductsPage selectPetByName(PetCategories petCategory, String petName){
 		return prodcuts.selectPetByName(petCategory, petName);
 	}
+	
+	@Step("Adding {0} to the shopping cart")
+	public ProductsPage addCartSpecificProduct(String prodName){
+		return prodcuts.addCartSpecificProduct(prodName);
+	}
+	
+	@Step("Selecitng pet {0} by viewing details and adding to the cart")
+	public ProductsPage addToCartByViewingItemDetails(String specificProduct, String ...details){
+		return prodcuts.addToCartByViewingItemDetails(specificProduct, details);
+	}
+	
+
+	@Step("Selecting {0} from the search results")
+	public ProductsPage selectProductFromSearchTable(String productName) {
+		return prodcuts.selectProductFromSearchTable(productName);
+	}
+	/************************************************************************************************
+	 * **********************************************************************************************
+	 * 	
+	 * 						ORDERS PAGE STEPS
+	 * 
+	 *************************************************************************************************
+	 *************************************************************************************************/
+	@Step("Entering purchase information & placing order")
+	public OrdersPage enterPaymentAndBillingDetails(String cardType,String cardNumber,String expiryDate,String firstname,String lastname,
+											   String addr1,String addr2,String city,String state,String zip,String country){
+		
+		return ordersPage.enterPaymentAndBillingDetails(cardType, cardNumber, expiryDate, firstname, lastname, addr1, 
+												   		  addr2, city, state, zip, country);		
+	}
+
+	
+	
+	@Step("Clicking on Ship to different checkbox" )
+	public OrdersPage clickShipToDifferentAddress() {
+		
+		return ordersPage.clickShipToDifferentAddress();
+	}
+	
+	@Step("Entering Shipping information")
+	public OrdersPage enterShippingInfo(String firstName , String lastName , String addr1
+			,String addr2,String city ,String state , String zip, String country){
+		
+		return ordersPage.enterShippingInfo(firstName, lastName, addr1, addr2, city, 
+				state, zip, country);
+	}
+	
+	@Step("Clicking on Continue Button")
+	public OrdersPage clickOnContinueBtn(){
+		
+		return ordersPage.clickOnContinueBtn();
+	}
+	
+	@Step("Clicking on Confirm button")
+	public OrdersPage clickOnConfirmBtn(){
+		
+		return ordersPage.clickOnConfirmBtn();
+	}
+	
+	@Step("Verify iof order has been placed")
+	public void verifyIfOrderSubmitted(){
+		
+		ordersPage.verifyIfOrderSubmitted();
+	}
+
+
+	@Step("Click on Proceed to checkout")
+	public OrdersPage clickOnProceedToCheckout() {
+		return prodcuts.clickOnProceedToCheckout();
+	}
+	
 }
